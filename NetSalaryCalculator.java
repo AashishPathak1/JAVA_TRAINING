@@ -20,6 +20,7 @@ public class NetSalaryCalculator {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the basic salary :");
     double basicSalary = sc.nextDouble();
     double netSalary = NetSalary(basicSalary);
     System.out.println("Net Salary: " + netSalary);

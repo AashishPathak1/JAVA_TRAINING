@@ -16,18 +16,19 @@ import java.util.Scanner;
 
 public class Insurance {
 
-    static void IncPolicy(String name, String gender,int age,String city){
-        if((age>=25 || age<=35 ) && (gender=="male") && (city == "metro"))
-        System.out.println( name+ "is Assured with " + "6% of policy");
-        else if ((age>=25 || age<=40 ) && (gender=="male") && (city == "non-metro"))
-            System.out.println( name+ "is Assured with " + "4% of policy");
-        else if((age>=25 || age<=42 ) && (gender=="female") && (city == "metro"))
-            System.out.println( name+ "is Assured with " + "3% of policy");
-        else if((age>=25 || age<=45 ) && (gender=="female") && (city == "non-metro"))
-            System.out.println( name+ "is Assured with " + "2% of policy");
+    static void IncPolicy(String name, String gender, int age, String city) {
+        if ((age >= 25 || age <= 35) && (gender == "male") && (city == "metro"))
+            System.out.println(name + "is Assured with " + "6% of policy");
+        else if ((age >= 25 || age <= 40) && (gender == "male") && (city == "non-metro"))
+            System.out.println(name + "is Assured with " + "4% of policy");
+        else if ((age >= 25 || age <= 42) && (gender == "female") && (city == "metro"))
+            System.out.println(name + "is Assured with " + "3% of policy");
+        else if ((age >= 25 || age <= 45) && (gender == "female") && (city == "non-metro"))
+            System.out.println(name + "is Assured with " + "2% of policy");
         else
-            System.out.println( name+ "is not Assured " );
-        }
+            System.out.println(name + "is not Assured ");
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the name:");
@@ -39,6 +40,6 @@ public class Insurance {
         System.out.println("Enter person City(metro or not metro) :");
         String city = sc.next();
         IncPolicy(name, gender, age, city);
-
+        sc.close();
     }
 }

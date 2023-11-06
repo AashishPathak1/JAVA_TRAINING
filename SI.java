@@ -16,6 +16,6 @@ public class SI {
         float t = sc.nextFloat();
         float result = SimpleI(p, r, t);
         System.out.println(result);
+        sc.close();
     }
-
 }

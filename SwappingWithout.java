@@ -19,5 +19,6 @@ public class SwappingWithout {
         int n1 = sc.nextInt();
         int n2 = sc.nextInt();
         Swap(n1, n2);
+        sc.close();
     }
 }

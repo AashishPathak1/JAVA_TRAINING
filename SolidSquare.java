@@ -1,16 +1,35 @@
+package Recursion;
+
 import java.util.Scanner;
 
 public class SolidSquare {
-    public static void main(String[] args) {
-        System.out.println("Enter a limit");
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        for (int i = 1; i <=num; i++) {
-            for (int j = 1; j <=num; j++) {
-                System.out.print("*");  
-            }
-            System.out.println();
-        }
-        sc.close();
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter the length of the square: ");
+    int Length = scanner.nextInt();
+    printSquare(Length);
+  }
+
+  static void printSquare(int Length) {
+    if (Length <= 0) {
+      System.out.println("length must be a positive integer.");
+      return;
     }
+
+    printSolidSquare(Length, Length);
+  }
+
+  static void printSolidSquare(int original, int current) {
+    if (current == 0) {
+      return;
+    }
+
+    for (int i = 1; i <= original; i++) {
+      System.out.print("* ");
+    }
+
+    System.out.println();
+    printSolidSquare(original, current - 1);
+  }
 }

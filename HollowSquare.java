@@ -1,22 +1,35 @@
-
+package Recursion;
 import java.util.Scanner;
+public class HollowSquare{
 
-public class HollowSquare {
     public static void main(String[] args) {
-        System.out.println("Enter a limit");
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        for (int i = 1; i <=num; i++) {
-            for (int j = 1; j <=num; j++) {
-                if (j == 1 || j == num || i == 1 || i == num) {
-                    System.out.print("* ");
-                } else {
-                    System.out.print("  ");
-                }
-
-            }
-            System.out.println("");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the length of the square: ");
+        int Length = scanner.nextInt();
+        printHollowSquare(Length,Length);
+    }
+    static void printHollowSquare(int Length) {
+        if (Length <= 0) {
+            System.out.println("Length must be a positive integer.");
+            return;
         }
-        sc.close();
+
+        printHollowSquare(Length,Length);
+    }
+    static void printHollowSquare(int original, int current) {
+        if (current == 0) {
+            return;
+        }
+
+        for (int i = 1; i <= original; i++) {
+            if (i == 1 || i == original || current == 1 || current == original) {
+                System.out.print("* ");
+            } else {
+                System.out.print("  ");
+            }
+        }
+
+        System.out.println();
+        printHollowSquare(original, current - 1);
     }
 }
